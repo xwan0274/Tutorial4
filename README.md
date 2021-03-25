@@ -2,4 +2,4 @@
 
 We have learned referencing 
 
-This is where the conflict will happen.
+We fixed the conflict
