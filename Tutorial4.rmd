@@ -10,3 +10,42 @@ keep_md: true
 create branch: git checkout -b branchname
 move between branches: git branch branchname
 delete branch: git branch -d branchname
+
+Steps to update:
+git add .
+git commit -m 'message'
+git push / git push origin branchname
+
+
+```{r global, include=FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+```{r message=FALSE}
+library(tidyverse)
+```
+
+# learning to reference figures {#figures}
+
+```{r FigRef, fig.cap="This is a line plot."}
+x = seq(1:100)
+y = rnorm(100)
+dat = data.frame(x, y)
+ggplot(dat, aes(x = x, y = y)) +
+geom_line()
+```
+
+In figure \@ref(fig:FigRef), we have plotted x versus y.
+
+# Learning to reference tables {#tables}
+
+In table \@ref(tab:TabRef), we have shown the first five rows of the data
+
+```{r TabRef}
+head(dat,5) %>% 
+  knitr::kable(caption = "First five rows of the data")
+```
+
+# Learning to reference sections
+
+in Section \@ref(figures) we plotted a figure, while in Section \@ref(tables) we produced a table
